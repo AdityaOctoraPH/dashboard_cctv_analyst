@@ -162,18 +162,19 @@ const DashboardA = () => {
                             <label for="radio3" className="text-green">Day</label>
                         </div>
                     </div>   
+                    <br></br>
                 </div>
                     <div className='col-6'>
                         <div className="row">
                             <div className="datetime">
-                                <DateTimeRangePicker
+                                {/* <DateTimeRangePicker
                                     onChange={onChange}
                                     value={value}
-                                />    
+                                />     */}
                             </div>
                         </div>
                     
-                    <br></br><br></br>
+                    
                     </div>
                     <div className="col-6">
                         

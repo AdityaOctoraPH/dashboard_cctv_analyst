@@ -1,11 +1,11 @@
 [
     {
-        "display_name": "KM39 Jati Asih (Up)",
+        "display_name": "KM39+400 Arah JKT",
         "route": "/",
         "icon": "bx bx-category-alt"
     },
     {
-        "display_name": "KM39 Jati Asih (Down)",
+        "display_name": "KM39+400 Arah CKP",
         "route": "/dashb",
         "icon": "bx bx-category-alt"
     }
