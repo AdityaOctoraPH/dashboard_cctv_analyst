@@ -18,7 +18,7 @@ const Chartpie = props => {
   const[chartOptions, setchartOptions] = useState([]);
   const[someState, setSomeState] = useState(0);
 
-  var labelspie= ['Car', 'Small Truck', 'Medium Truck', 'Large Truck', 'Extra Large', 'Small Bus', 'Big Bus'];
+  var labelspie= ['Car', 'Small Truck', 'Medium Truck', 'XL Truck', 'Extra Large', 'Small Bus', 'Big Bus'];
   const axi ={
     headers:{
       "Access-Control-Expose-Headers":"Access-Control-*",

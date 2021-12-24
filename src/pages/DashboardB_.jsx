@@ -16,8 +16,6 @@ import Badge from '../components/badge/Badge'
 
 import statusCards from '../assets/JsonData/status-card-data.json'
 
-import Button from '@material-ui/core/Button';
-
 const chartOptions = {
     series: [55, 20, 11, 5, 4, 2, 3],
             options: {
