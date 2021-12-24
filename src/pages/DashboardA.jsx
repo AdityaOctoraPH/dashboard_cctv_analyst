@@ -14,7 +14,6 @@ import Badge from '../components/badge/Badge'
 
 import statusCards from '../assets/JsonData/status-card-data.json'
 
-import Button from '@material-ui/core/Button';
 import Chartpie from '../components/chart/Chartpie'
 import Chartcount from '../components/chart/Chartcount'
 import '../components/delay/delay.css'
@@ -162,19 +161,18 @@ const DashboardA = () => {
                             <label for="radio3" className="text-green">Day</label>
                         </div>
                     </div>   
-                    <br></br>
                 </div>
                     <div className='col-6'>
                         <div className="row">
                             <div className="datetime">
-                                {/* <DateTimeRangePicker
+                                <DateTimeRangePicker
                                     onChange={onChange}
                                     value={value}
-                                />     */}
+                                />    
                             </div>
                         </div>
                     
-                    
+                    <br></br><br></br>
                     </div>
                     <div className="col-6">
                         

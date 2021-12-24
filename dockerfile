@@ -18,7 +18,7 @@ RUN npm install --silent
 RUN npm run build
 
 # => Run container
-FROM nginx:1.15.2-alpine
+FROM nginx:alpine
 
 # Nginx config
 RUN rm -rf /etc/nginx/conf.d

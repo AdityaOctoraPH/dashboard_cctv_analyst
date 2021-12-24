@@ -14,7 +14,6 @@ import Badge from '../components/badge/Badge'
 
 import statusCards from '../assets/JsonData/status-card-data.json'
 
-import Button from '@material-ui/core/Button';
 import ChartpieB from '../components/chart/ChartpieB'
 import ChartcountB from '../components/chart/ChartcountB'
 import '../components/delay/delay.css'
