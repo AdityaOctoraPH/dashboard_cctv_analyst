@@ -1,3 +1,3 @@
 #!/bin/bash
-docker stop Dashboard
-docker rm Dashboard
+docker stop Dashboard_jmvc
+docker rm Dashboard_jmvc
