@@ -13,7 +13,7 @@ COPY package.json ./
 COPY . /app
 
 # start app
-RUN npm install -g npm@7.9.0
+RUN npm install -g npm@8.3.0
 RUN npm install --silent
 RUN npm run build
 
