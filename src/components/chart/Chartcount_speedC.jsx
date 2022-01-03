@@ -37,7 +37,7 @@ function make2(data_raw,par,new_var){
     }
 } 
 
-const Chartcount_speed = props => {
+const Chartcount_speedC = props => {
     const[someState, setSomeState] = useState(0);
     const[someState2, setSomeState2] = useState(0);
     const[stateline,setstateline]=useState([]);
@@ -146,4 +146,4 @@ const Chartcount_speed = props => {
     )
 }
 
-export default Chartcount_speed
+export default Chartcount_speedC

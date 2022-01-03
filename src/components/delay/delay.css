@@ -1,12 +1,48 @@
 @charset "UTF-8";
 
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+/*===== VARIABLES CSS =====*/
+:root{
+  /*===== Colores =====*/
+  --first-color: #1A73E8;
+  --input-color: #80868B;
+  --border-color: #DADCE0;
+
+  /*===== Fuente y tipografia =====*/
+  --body-font: 'Roboto', sans-serif;
+  --normal-font-size: 1rem;
+  --small-font-size: .75rem;
+}
+
+
+.form__button{
+  display: block;
+  /* margin-left: auto; */
+  /* align-items:center; */
+  padding: .75rem 2rem;
+  outline: none;
+  border: none;
+  background-color: var(--first-color);
+  color: #fff;
+  font-size: var(--normal-font-size);
+  border-radius: .5rem;
+  cursor: pointer;
+  transition: .3s;
+}
+.form__button:hover{
+  box-shadow: 0 10px 36px rgba(0,0,0,.15);
+}
+
+/*Input focus move up label*/
 .datetime{
-  border: 2px solid #fff;
-  color: #717171;
-  border-radius: 5px;
-  padding: 0px 0px;
-  background-color: #fff;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  z-index: -1;
+  /* border: 2px solid #fff; */
+  /* color: #717171; */
+  /* border-radius: 5px; */
+  /* padding: 0px 0px; */
+  /* background-color: #fff; */
+  /* text-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
 }
 .fa-radio label {
   font-family: Arial, sans-serif;

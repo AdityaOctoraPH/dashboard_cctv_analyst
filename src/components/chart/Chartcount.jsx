@@ -103,7 +103,7 @@ const Chartcount = props => {
         
         setstateline(series);
         chart(labelline);
-        // console.log(series);
+        console.log(series);
         // console.log(this.state.xn);
       }
 
@@ -189,7 +189,7 @@ const Chartcount = props => {
                             }}
                             series={stateline}
                             type='line'
-                            height='150%'
+                            height='200'
                         />
         </div>
     )

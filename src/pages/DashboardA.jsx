@@ -1,5 +1,5 @@
 import React, {useState,useEffect,useLayoutEffect} from 'react'
-
+import { compareAsc, format } from 'date-fns'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
 import { useSelector } from 'react-redux'
@@ -15,7 +15,7 @@ import Badge from '../components/badge/Badge'
 import statusCards from '../assets/JsonData/status-card-data.json'
 
 import Chartpie from '../components/chart/Chartpie'
-import Chartcount from '../components/chart/Chartcount'
+import Chartcount from '../components/chart/ChartcountC'
 import '../components/delay/delay.css'
 import Chartcount_speed from '../components/chart/Chartcount_speed';
 
@@ -78,19 +78,23 @@ const DashboardA = () => {
         // console.log(`ok auth ${cookies.Token}`)
     }
 
+    // const[stateStatusDate,setstateStatusDate]=useState(`minutes?startdate=`+format(value[0], 'ddMMyyyy-HH:mm:ss')+`&enddate=`+format(value[1], 'ddMMyyyy-HH:mm:ss'));
+    const[stateStatusDate,setstateStatusDate]=useState(0)
     const[stateStatus,setstateStatus]=useState("minutes");
     const[stateTrig,setstateTrig]=useState(0);
     const[stateStatus_minute,setstateStatus_minute]=useState(true);
     const[stateStatus_hour,setstateStatus_hour]=useState(false);
     const[stateStatus_day,setstateStatus_day]=useState(false);
     const[value, onChange] = useState([new Date(), new Date()]);
+    const[statusDate, setstatusDate] = useState(false);
 
     const toggleMinute = () => {
         setstateStatus_minute(true);
         setIsActive(true);
         setstateStatus_hour(false);
         setstateStatus_day(false);
-        setstateStatus("minutes");
+        setstateStatus(`minutes`); //?startdate=30122021-00:00:00&enddate=30122021-02:03:00
+        // setstateStatusDate(`minutes?startdate=`+format(value[0], 'ddMMyyyy-HH:mm:ss')+`&enddate=`+format(value[1], 'ddMMyyyy-HH:mm:ss'));
         settimer(60000);
         console.log('minute');
        
@@ -101,6 +105,7 @@ const DashboardA = () => {
         setstateStatus_hour(true);
         setstateStatus_day(false);
         setstateStatus("hours");
+        // setstateStatusDate(`hours?startdate=`+format(value[0], 'ddMMyyyy-HH:mm:ss')+`&enddate=`+format(value[1], 'ddMMyyyy-HH:mm:ss'));
         settimer(3600000)
         console.log('hour');
         
@@ -111,10 +116,18 @@ const DashboardA = () => {
         setstateStatus_hour(false);
         setstateStatus_day(true);
         setstateStatus("days");
+        // setstateStatusDate(`days?startdate=`+format(value[0], 'ddMMyyyy-HH:mm:ss')+`&enddate=`+format(value[1], 'ddMMyyyy-HH:mm:ss'));
         console.log('day');
+    }
+
+    const chooseDate = (value) =>{
+        setstatusDate(true);
+        onChange(value)
     }
     
     useEffect(()=>{
+        // console.log([format(value[0], 'ddMMyyyy-HHmmss'), format(value[1], 'ddMMyyyy-HHmmss')]);
+        console.log(stateStatusDate)
         let intervalId;
             if (isActive) {
                 intervalId = setInterval(() => {
@@ -131,7 +144,8 @@ const DashboardA = () => {
             }
       
           return () => clearInterval(intervalId);
-        }, [isActive,timer])
+          
+        }, [isActive,timer,value, stateStatusDate])
         // myLoop();
         // if (stateStatus!=='minutes'){
         //     clearInterval(intervalID);
@@ -163,45 +177,81 @@ const DashboardA = () => {
                     </div>   
                 </div>
                     <div className='col-6'>
-                        <div className="row">
-                            <div className="datetime">
-                                <DateTimeRangePicker
-                                    onChange={onChange}
-                                    value={value}
-                                />    
-                            </div>
-                        </div>
+                        
+                            
+                            
                     
-                    <br></br><br></br>
+                    <br></br><br></br><br></br>
                     </div>
+                { statusDate ?
+                    <>
+                    apa
                     <div className="col-6">
                         
-                                <StatusCard endpoint={stateStatus} trig={stateTrig} />      
+                                <StatusCard endpoint={stateStatusDate} trig={stateTrig} />      
 
                     </div>
-                <div className="col-6">
-                    <div className="card full-height">
-                    
-                        <Chartpie endpoint={stateStatus} trig={stateTrig} />
-                     
-                    </div>
-                </div>
-                <div className="col-12">
-                    <div className="card full-height">
-                    
-                        <Chartcount endpoint={stateStatus} trig={stateTrig} />
-                        
-                    </div>
-                </div>
-                <div className="col-12">
-                    <div className="card full-height">
-                       
-                            <Chartcount_speed endpoint={stateStatus} trig={stateTrig} />
-                    
-                    
-                    </div>
-                </div>
                 
+                        <div className="col-6">
+                        <div className="card full-height">
+                        
+                            <Chartpie endpoint={stateStatusDate} trig={stateTrig} />
+                        
+                        </div>
+                    </div>
+
+                    <div className="col-12">
+                        <div className="card full-height">
+                        
+                            <Chartcount endpoint={stateStatusDate} trig={stateTrig} />
+                            
+                        </div>
+                    </div>
+
+                    <div className="col-12">
+                        <div className="card full-height">
+                        
+                                <Chartcount_speed endpoint={stateStatusDate} trig={stateTrig} />
+                        
+                        
+                        </div>
+                    </div>
+                </>
+                :
+                <>
+                <div className="col-6">
+                        
+                        <StatusCard endpoint={stateStatus} trig={stateTrig} />      
+
+                </div>
+                        <div className="col-6">
+                        <div className="card full-height">
+                        
+                            <Chartpie endpoint={stateStatus} trig={stateTrig} />
+                        
+                        </div>
+                    </div>
+
+                    <div className="col-12">
+                        <div className="card full-height">
+                        
+                            <Chartcount endpoint={stateStatus} trig={stateTrig} />
+                            
+                        </div>
+                    </div>
+
+                    <div className="col-12">
+                        <div className="card full-height">
+                        
+                                <Chartcount_speed endpoint={stateStatus} trig={stateTrig} />
+                        
+                        
+                        </div>
+                    </div>
+                </>
+                }
+                
+
             </div>
         </div>
     )

@@ -102,7 +102,7 @@ const Chartpie = props => {
                             }}
                           series={statepie}
                             type='pie'
-                            height='150%'
+                            height='250'
                         />
     </div>
     )
