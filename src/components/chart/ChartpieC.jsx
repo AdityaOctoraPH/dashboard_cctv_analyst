@@ -12,7 +12,7 @@ function make2(data,new_var){
     }
 } 
 
-const Chartpie = props => {
+const ChartpieC = props => {
   var series = [];
   const[statepie,setstatepie]=useState([]);
   const[chartOptions, setchartOptions] = useState([]);
@@ -34,7 +34,7 @@ const Chartpie = props => {
 }
   const getData = async()=> {
         
-    let data = await axios.get(`http:${window._env_.REACT_APP_PROXY8080}/vc_ratio_${props.endpoint}`,axi).then(({ data }) => data); 
+    let data = await axios.get(`http:${window._env_.REACT_APP_PROXY8080}/vc_ratio_minutes/`,axi).then(({ data }) => data); 
 
     const newState = make2(data,series);
     setSomeState(newState);
@@ -109,4 +109,4 @@ const Chartpie = props => {
     )
 }
 
-export default Chartpie
+export default ChartpieC

@@ -140,7 +140,7 @@ const Chartcount_speed = props => {
                             }}
                             series={stateline}
                             type='line'
-                            height='150%'
+                            height='200'
                         />
         </div>
     )

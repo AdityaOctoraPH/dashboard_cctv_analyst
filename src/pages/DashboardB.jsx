@@ -96,14 +96,14 @@ const DashboardA = () => {
                 <div className='col-6'>
                         <div className="row">
                             <div className="datetime">
-                                <DateTimeRangePicker
+                                {/* <DateTimeRangePicker
                                     onChange={onChange}
                                     value={value}
-                                />    
+                                />     */}
                             </div>
                         </div>
                     
-                    <br></br><br></br>
+                    <br></br><br></br><br></br>
                 </div>
                 <div className="col-6">
                     

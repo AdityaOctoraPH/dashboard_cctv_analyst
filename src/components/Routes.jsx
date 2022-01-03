@@ -4,14 +4,14 @@ import { Route, Switch } from 'react-router-dom'
 
 import DashboardA from '../pages/DashboardA'
 import DashboardB from '../pages/DashboardB'
-import Customers from '../pages/Customers'
+import DashboardC from '../pages/DashboardC'
 
 const Routes = () => {
     return (
         <Switch>
             <Route path='/' exact component={DashboardA}/>
             <Route path='/dashb' exact component={DashboardB}/>
-            <Route path='/customers' component={Customers}/>
+            <Route path='/dashc' exact component={DashboardC}/>
         </Switch>
     )
 }
