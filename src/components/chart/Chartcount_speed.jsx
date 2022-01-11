@@ -89,7 +89,7 @@ const Chartcount_speed = props => {
         setchartOptions({
         options: {
             title: {
-                text: `Speed Countings in ${props.endpoint.charAt(0).toUpperCase() + props.endpoint.slice(1)}`,
+                text: `Speed Counting in ${props.endpoint.charAt(0).toUpperCase() + props.endpoint.slice(1)}`,
                 align: 'left',
                 margin: 10,
                 offsetX: 0,
@@ -140,7 +140,7 @@ const Chartcount_speed = props => {
                             }}
                             series={stateline}
                             type='line'
-                            height='200'
+                            height='250'
                         />
         </div>
     )

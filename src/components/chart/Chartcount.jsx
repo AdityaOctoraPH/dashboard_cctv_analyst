@@ -14,7 +14,7 @@ function make(data_raw,new_var){
             new_var[4].data.push(data_raw[i].sum_truck_xl_up);
             new_var[5].data.push(data_raw[i].sum_bus_s_up);
             new_var[6].data.push(data_raw[i].sum_bus_l_up);
-
+            new_var[7].data.push(data_raw[i].sum_car_up + data_raw[i].sum_truck_s_up + data_raw[i].sum_truck_m_up + data_raw[i].sum_truck_l_up + data_raw[i].sum_truck_xl_up + data_raw[i].sum_bus_s_up + data_raw[i].sum_bus_l_up);
         }
     }
 } 
@@ -86,6 +86,9 @@ const Chartcount = props => {
         },{
             name: 'Big Bus',
             data: []
+        },{
+            name: 'Total',
+            data: []
         }];
         var labelline = [];
 
@@ -137,7 +140,7 @@ const Chartcount = props => {
         // }]
         options: {
             title: {
-                text: `Vehicles Counting in ${props.endpoint.charAt(0).toUpperCase() + props.endpoint.slice(1)}`,
+                text: `Vehicle Counting in ${props.endpoint.charAt(0).toUpperCase() + props.endpoint.slice(1)}`,
                 align: 'left',
                 margin: 10,
                 offsetX: 0,
@@ -178,7 +181,6 @@ const Chartcount = props => {
     },[props.endpoint,props.trig])
     return (
         <div>
-        
         <Chart
                             options={themeReducer === 'theme-mode-dark' ? {
                                 ...chartOptions.options,
@@ -189,7 +191,7 @@ const Chartcount = props => {
                             }}
                             series={stateline}
                             type='line'
-                            height='200'
+                            height='250'
                         />
         </div>
     )

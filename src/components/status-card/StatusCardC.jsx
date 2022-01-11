@@ -9,7 +9,7 @@ function make(data,new_var){
         // for(let i=0;i<1;i++){
             new_var.push({
                 count: data[0].sum_car_up,
-                title: "ㅤㅤCar"
+                title: "Car"
             },{
                 count: data[0].sum_truck_s_up,
                 title: "Small Truck"

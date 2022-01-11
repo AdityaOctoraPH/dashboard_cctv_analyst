@@ -14,7 +14,8 @@ function make(data_raw,new_var){
             new_var[4].data.push(data_raw[i].sum_truck_xl_down);
             new_var[5].data.push(data_raw[i].sum_bus_s_down);
             new_var[6].data.push(data_raw[i].sum_bus_l_down);
-
+            
+            new_var[7].data.push(data_raw[i].sum_car_down + data_raw[i].sum_truck_s_down + data_raw[i].sum_truck_m_down + data_raw[i].sum_truck_l_down + data_raw[i].sum_truck_xl_down + data_raw[i].sum_bus_s_down + data_raw[i].sum_bus_l_down);
         }
     }
 } 
@@ -86,7 +87,10 @@ const Chartcount = props => {
         },{
             name: 'Big Bus',
             data: []
-        }];
+        },{
+            name: 'Total',
+            data: []
+        }]
         var labelline = [];
 
     const getData = async()=> {
@@ -137,7 +141,7 @@ const Chartcount = props => {
         // }]
         options: {
             title: {
-                text: `Vehicles Counting in ${props.endpoint.charAt(0).toUpperCase() + props.endpoint.slice(1)}`,
+                text: `Vehicle Counting in ${props.endpoint.charAt(0).toUpperCase() + props.endpoint.slice(1)}`,
                 align: 'left',
                 margin: 10,
                 offsetX: 0,
@@ -189,7 +193,7 @@ const Chartcount = props => {
                             }}
                             series={stateline}
                             type='line'
-                            height='200'
+                            height='250'
                         />
         </div>
     )
