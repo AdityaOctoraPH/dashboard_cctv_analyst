@@ -193,11 +193,7 @@ const Chartcount = props => {
                             }}
                             series={stateline}
                             type='line'
-<<<<<<< HEAD
                             height='250'
-=======
-                            height='200'
->>>>>>> fb57e0cdd91a32ce8591a29f33c0f95a29486c08
                         />
         </div>
     )

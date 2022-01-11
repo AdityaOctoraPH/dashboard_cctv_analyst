@@ -15,7 +15,7 @@ import Badge from '../components/badge/Badge'
 import statusCards from '../assets/JsonData/status-card-data.json'
 
 import Chartpie from '../components/chart/Chartpie'
-import Chartcount from '../components/chart/ChartcountC'
+import Chartcount from '../components/chart/Chartcount'
 import '../components/delay/delay.css'
 import Chartcount_speed from '../components/chart/Chartcount_speed';
 
@@ -176,7 +176,6 @@ const DashboardA = () => {
                         </div>
                     </div>   
                 </div>
-<<<<<<< HEAD
                     <div className='col-6'> 
                     
                     <br></br><br></br><br></br>
@@ -191,75 +190,6 @@ const DashboardA = () => {
                         
                             <Chartpie endpoint={stateStatus} trig={stateTrig} />
                         
-=======
-                    <div className='col-6'>
-                        
-                            
-                            
-                    
-                    <br></br><br></br><br></br>
-                    </div>
-                { statusDate ?
-                    <>
-                    apa
-                    <div className="col-6">
-                        
-                                <StatusCard endpoint={stateStatusDate} trig={stateTrig} />      
-
-                    </div>
-                
-                        <div className="col-6">
-                        <div className="card full-height">
-                        
-                            <Chartpie endpoint={stateStatusDate} trig={stateTrig} />
-                        
-                        </div>
-                    </div>
-
-                    <div className="col-12">
-                        <div className="card full-height">
-                        
-                            <Chartcount endpoint={stateStatusDate} trig={stateTrig} />
-                            
->>>>>>> fb57e0cdd91a32ce8591a29f33c0f95a29486c08
-                        </div>
-                    </div>
-
-                    <div className="col-12">
-                        <div className="card full-height">
-                        
-<<<<<<< HEAD
-                            <Chartcount endpoint={stateStatus} trig={stateTrig} />
-                            
-                        </div>
-                    </div>
-
-                    <div className="col-12">
-                        <div className="card full-height">
-                        
-                                <Chartcount_speed endpoint={stateStatus} trig={stateTrig} />
-=======
-                                <Chartcount_speed endpoint={stateStatusDate} trig={stateTrig} />
->>>>>>> fb57e0cdd91a32ce8591a29f33c0f95a29486c08
-                        
-                        
-                        </div>
-                    </div>
-<<<<<<< HEAD
-=======
-                </>
-                :
-                <>
-                <div className="col-6">
-                        
-                        <StatusCard endpoint={stateStatus} trig={stateTrig} />      
-
-                </div>
-                        <div className="col-6">
-                        <div className="card full-height">
-                        
-                            <Chartpie endpoint={stateStatus} trig={stateTrig} />
-                        
                         </div>
                     </div>
 
@@ -279,11 +209,6 @@ const DashboardA = () => {
                         
                         </div>
                     </div>
-                </>
-                }
-                
-
->>>>>>> fb57e0cdd91a32ce8591a29f33c0f95a29486c08
             </div>
         </div>
     )

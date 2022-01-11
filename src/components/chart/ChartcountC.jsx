@@ -103,11 +103,7 @@ const ChartcountC = props => {
         
         setstateline(series);
         chart(labelline);
-<<<<<<< HEAD
         // console.log(series);
-=======
-        console.log(series);
->>>>>>> fb57e0cdd91a32ce8591a29f33c0f95a29486c08
         // console.log(this.state.xn);
       }
 
